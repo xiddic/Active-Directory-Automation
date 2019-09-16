@@ -6,17 +6,15 @@ Scriptet skapar 2 säkerhetsgrupper i AD för varje windows server.
 1 grupp som ger lokal admin på servern.
 1 grupp som ger remote rättigheter till servern utan lokal admin.
 
-Fyll i nedan:
+Fyll i nedan i scriptet:
 
-#Variables
-$logPath - Sökväg till vart loggar skall sparas.
-$logFile = Namn på loggfil ex: "sec-srv-auto.log"
-$domainControllers = Lista varje DC i en variable "DC01.test" , "DC02.test"
-$domainController = Get-Random $doaminControllers
-
-$SecGroupsToCreate = New-Object System.Collections.Generic.List[System.Object]
-$serverOU =  Distinguished Name för OU där servrar som scriptet ska skapa säkerhetsgrupper för.
-$secGroupOU = Distinguished Name för OU där säkerhetsgrupperna ska placeras.
+$logPath - Sökväg till vart loggar skall sparas. <br/>
+$logFile = Namn på loggfil ex: "sec-srv-auto.log" <br/>
+$domainControllers = Lista varje DC i en variable "DC01.test" , "DC02.test" <br/>
+$domainController = Get-Random $doaminControllers <br/>
+$SecGroupsToCreate = New-Object System.Collections.Generic.List[System.Object] <br/>
+$serverOU =  Distinguished Name för OU där servrar som scriptet ska skapa säkerhetsgrupper för. <br/>
+$secGroupOU = Distinguished Name för OU där säkerhetsgrupperna ska placeras. <br/>
 
 
 Scriptet kombineras med två saker: 
