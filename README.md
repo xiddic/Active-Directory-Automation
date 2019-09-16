@@ -1,5 +1,7 @@
 # Active-Directory-Automation
 
+
+## sec-srv-auto
 Scriptet skapar 2 säkerhetsgrupper i AD för varje windows server.
 1 grupp som ger lokal admin på servern.
 1 grupp som ger remote rättigheter till servern utan lokal admin.
