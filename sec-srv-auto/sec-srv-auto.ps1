@@ -2,7 +2,7 @@
 $logPath = "C:\Scripts\active-directory\sec-srv-auto\logs\"
 $logFile = "sec-srv-auto.log"
 $domainControllers = "DC01.test" , "DC02.test", "DC03.test"
-$domainController = Get-Random $doaminControllers
+$domainController = Get-Random $domainControllers
 
 #Create container array for server names.
 $SecGroupsToCreate = New-Object System.Collections.Generic.List[System.Object]
@@ -55,15 +55,15 @@ try {
 Get-ADGroup -Identity $ServerAdmin
 
 }catch{
-New-ADGroup -Path $secGroupOU -Name $ServerAdmin -GroupCategory Security -GroupScope Global -Description "Local admin på server $($Server.name)" -OtherAttributes @{'info'="Scripted Group"}  -Server $domainController
-write-log -Message "Skapat grupp för $ServerAdmin" -logfile "$($LogPath)$($LogFile)"
+New-ADGroup -Path $secGroupOU -Name $ServerAdmin -GroupCategory Security -GroupScope Global -Description "Local admin pÃ¥ server $($Server.name)" -OtherAttributes @{'info'="Scripted Group"}  -Server $domainController
+write-log -Message "Skapat grupp fÃ¶r $ServerAdmin" -logfile "$($LogPath)$($LogFile)"
 }
 
 try {
 Get-ADGroup -Identity $ServerUser
 
 }catch{
-New-ADGroup -Path $secGroupOU -Name $ServerUser -GroupCategory Security -GroupScope Global -Description "Enbart RDP rättighet till $($Server.name)" -OtherAttributes @{'info'="Scripted Group"} -Server $domainController
-write-log -Message "Skapat grupp för $ServerUser" -logfile "$($LogPath)$($LogFile)"
+New-ADGroup -Path $secGroupOU -Name $ServerUser -GroupCategory Security -GroupScope Global -Description "Enbart RDP rÃ¤ttighet till $($Server.name)" -OtherAttributes @{'info'="Scripted Group"} -Server $domainController
+write-log -Message "Skapat grupp fÃ¶r $ServerUser" -logfile "$($LogPath)$($LogFile)"
 }
 }
